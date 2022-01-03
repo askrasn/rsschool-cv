@@ -4,9 +4,145 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="assets/favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">  
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
+  <title>cv</title>
 </head>
 <body>
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="#contacts" class="nav-link">Contacts</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#code" class="nav-link">Code</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#english" class="nav-link">English</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+ 
+  <main>
+    <div class="container">
+      <section class="section-profile">
+        <img src="./assets/img/photo.jpg" alt="photo">
+        <div class="section-profile-title">
+          <h1 class="section-title">Aleksandr Krasnoperov</h1>
+          <h3><a href="https://en.wikipedia.org/wiki/Operational_technology">OT</a> engineer</h3>
+        </div>
+      </section>
+      
+      <section class="section" id="contacts">
+         <h2 class="section-title">Contacts</h2>
+         <ul>
+           <li>Phone: <a href="tel:+79090598709">+7 909 059-087-09</a></li>
+           <li>Email: <a href="mailto:glit6h@gmail.com">glit6h@gmail.com</a></li>
+          </ul>
+      </section>
+      
+      <section class="section" id="about">
+        <h2 class="section-title">About</h2>
+        <p>I'm a full-stack operational technology engineer who creates programs for PLC and interacting interfaces for machine operators in the dairy products industry. </p>
+      </section>
+     
+      <section class="section" id="skills">
+         <h2 class="section-title">Skills</h2>
+          <ul>
+            <li>HTML, CSS</li>
+            <li>Git</li>
+            <li>IEC 61131-3 languages</li>
+          </ul>
+     </section>
+     
+      <section class="section" id="code">
+        <h2 class="section-title">Code example</h2>
+        <p>Changing time-step increment value depending on time range, 86400 equal 24h.</p> 
+        <pre>
+          <code>
+            macro_command main()
+            
+            unsigned int controlAxisX
+            unsigned int stepVol
+            
+            GetData(controlAxisX, "Local HMI", LW, 0, 1)
+            
+            
+            if controlAxisX < 600 or controlAxisX >= 86400 then
+            
+              if controlAxisX <= 600 then 
+                controlAxisX = 600
+              //end if
+              else if controlAxisX >= 86400 then 
+                controlAxisX = 86400
+              end if
+              
+            else
+              
+              if controlAxisX >= 43200 and controlAxisX < 86400 then
+                stepVol = 7200
+              //end if
+            
+              else if controlAxisX >= 21600  and controlAxisX < 43200 then
+                stepVol = 3600
+              //end if
+            
+              else if controlAxisX >= 14400  and controlAxisX < 21600 then
+                stepVol = 2400
+              //end if
+            
+              else if controlAxisX >= 3600  and controlAxisX < 14400 then
+                stepVol = 1800
+              //end if
+            
+              else if controlAxisX >= 600  and controlAxisX < 3600 then
+                stepVol = 600
+                
+              end if
+            
+              controlAxisX = controlAxisX + stepVol 
+              
+            end if
+            
+            SetData(controlAxisX, "Local HMI", LW, 0, 1)
+            
+            end macro_command
+          </code>
+        </pre>
+      </section>
+
+      <section class="section" id="education">
+        <h2 class="section-title">Education</h2>
+          <ul>
+            <li>Radio electronic engineer at Izhvesk State Technical University</li>
+            <li>Siemens's courses for PLC programmers</li>
+            <li>HTML and CSS courses at <a href="https://code-basics.com/">Code-Basics.com</a></li>
+            <li>JS at <a href="https://learn.javascript.ru/">learn.javasript.ru</a> (in progress)</li>
+          </ul>
+        
+      </section>
+
+      <section class="section" id="english">
+        <h2 class="section-title">English</h2>
+        <p>B1 by quick check EF SET test</p>
+      </section>
+    </div>
+  </main>
+ 
+  <footer>
+    <div class="section">
+      <div class="footer-container">
+        <a href="https://github.com/askrasn">Github</a>
+        <div>2022</div>
+        <a href="https://rs.school/js/" class="rss">
+          <img src="./assets/img/rs_school_js.svg" alt="rss_js.svg">
+        </a>
+      </div>
+    </div>
+  </footer>
   
 </body>
 </html>
