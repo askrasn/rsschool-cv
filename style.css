@@ -55,14 +55,14 @@ main {
   padding: 40px 0 0 0;
 }
 
-.section-item {
-  position: relative;
-  margin: 0;
-  margin-bottom: 10px;
-  padding: 0;
-  padding-left: 30px;
+.section::before {
+  display: block; 
+  content: " "; 
+  margin-top: -40px; 
+  height: 40px; 
+  visibility: hidden; 
+  pointer-events: none;
 }
-
 
 .section-title {
   color: gray;
