@@ -83,12 +83,18 @@ main {
   text-align: left;  
 }
 
+.round {
+  border-radius: 200px;
+  border: 3px solid gray;
+  margin: 50px;
+}
+
 .footer-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 1024px;
-  margin: 0 auto 10px auto;
+  margin: 0 auto;
   padding: 5px;
   background-color: gray;
   color:whitesmoke;
@@ -100,8 +106,8 @@ main {
 }
 
 .rss {
-  width: 121px;
-  height: 45px;
+  width: 81px;
+  height: 30px;
   background-image: url("./assets/img/rs_school_js.svg");
   background-size: contain;
   background-repeat: no-repeat;
