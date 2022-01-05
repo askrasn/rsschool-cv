@@ -1,7 +1,8 @@
 body {
   font-family: 'Roboto', sans-serif;
   min-height: 100vh;
-  margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -15,22 +16,44 @@ body {
 .container {
   max-width: 1024px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
+header {
+  background-color: gray;
+}
+
+.nav {
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 15px;
+   
+}
 
 .nav-list {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   list-style: none;
+  background-color: gray;
+  margin: 0 auto;
+  padding: 0;
+  height: 40px;
 }
 
 .nav-link {
-  padding: 0 5px;
-  line-height: 50px;
+  padding: 0 10px;
+  line-height: 20px;
   text-decoration: none;
+  color:whitesmoke;
 }
 
+main {
+  padding: 40px 0 0 0;
+}
 
 .section-item {
   position: relative;
@@ -65,7 +88,15 @@ body {
   justify-content: space-between;
   align-items: center;
   max-width: 1024px;
-  margin: 0 auto;
+  margin: 0 auto 10px auto;
+  padding: 5px;
+  background-color: gray;
+  color:whitesmoke;
+}
+
+.footer-link {
+  text-decoration: none;
+  color:whitesmoke;
 }
 
 .rss {
